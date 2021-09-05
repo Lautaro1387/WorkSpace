@@ -12,7 +12,7 @@ function verificar(usuario, contraseña){
         user.contraseña = contraseña;
         user.estado = "conectado";
         localStorage.setItem("usuario",JSON.stringify(user));
-        location.href="index.html";
+        location.href="inicio.html";
     }
     }
     
@@ -20,6 +20,9 @@ function verificar(usuario, contraseña){
     localStorage.clear();
     }
 
+   
     document.addEventListener("DOMContentLoaded", function(e){
-
-    });
+        let user = JSON.parse(localStorage.getItem("usuario"));
+       
+        document.getElementById("hola").innerHTML = user.nombre;
+           });
