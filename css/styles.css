@@ -139,3 +139,71 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#currency {
+  display: inline-block;
+}
+#cost {
+  display: inline-block;
+}
+.puntuacion {
+position: relative;
+overflow: hidden;
+display: inline-block;
+}
+
+.puntuacion input {
+position: absolute;
+top: -100px;
+}
+
+
+.puntuacion label {
+float: right;
+color: #c1b8b8;
+font-size: 30px; 
+}
+
+.puntuacion label:hover,
+.puntuacion label:hover ~ label,
+.puntuacion input:checked ~ label {
+color:orange;
+}
+span{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    color: blue;
+}
+
+
+
+
+
+.thumbnail {
+  padding:0px;
+}
+.panel {
+position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+position:absolute;
+top:11px;left:-16px;
+right:100%;
+width:0;
+height:0;
+display:block;
+content:" ";
+border-color:transparent;
+border-style:solid solid outset;
+pointer-events:none;
+}
+.panel>.panel-heading:after{
+border-width:7px;
+border-right-color:#f7f7f7;
+margin-top:1px;
+margin-left:2px;
+}
+.panel>.panel-heading:before{
+border-right-color:#ddd;
+border-width:8px;
+}
