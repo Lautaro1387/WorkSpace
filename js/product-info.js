@@ -1,5 +1,6 @@
 var products = {};
 let lista = [];
+
 function mostrarProductos(array){
 
     let htmlProductsToAppend = "";
@@ -49,7 +50,16 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
+document.addEventListener("DOMContentLoaded", function(e){
+    getJSONData(PRODUCT_URL).then(function(resultObj){
+        if (resultObj.status === "ok")
+        {
+            productsArray = resultObj.data;
 
+            armaProductosRelacionados(productsArray)
+        }
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
@@ -80,6 +90,81 @@ function mostrarcomentarios(comentarios){
        document.getElementById("tabla").innerHTML = htmlCommentToAppend;
     }
     }
+
+
+
+
+
+
+
+
+
+
+
+/*function armaProductosRelacionados(arrayP){
+ let productosRelacionados=[];
+ let losProductos=infoProductos.relatedProducts
+
+ for(let i=0; i<losProductos.length;i++){
+
+     productosRelacionados.push(arrayP[losProductos[i]]);
+
+ }
+
+mostrarProductosRelacionados(productosRelacionados)
+}
+
+
+function mostrarProductosRelacionados(algo){
+
+    let htmlContentToAppend = "";
+    htmlContentToAppend = (`<div class="carousel-item active"><img src="`+algo[1].imgSrc+`" alt="`+algo[3].description+`"></div>`)
+    for(let i = 1; i < algo.length; i++){
+        let category = algo[i];
+
+        htmlContentToAppend += `<div class="carousel-item">
+        <img src="`+ category.imgSrc +`" alt="`+ category.description+ `"> </div>`
+
+        document.getElementById("cat-list-container").innerHTML = (htmlContentToAppend);
+    }
+}
+
+
+function muestraProductosRelacionados(algo){
+        let htmlProductToAppend = ""
+        htmlProductToAppend = (`<div class="carousel-item active"><img src="`+algo[0].imgSrc+`" alt="`+algo[0].description+`"></div>`)
+
+        for(let i = 1;i < algo.length; i++ ){;
+        let category = algo [i]
+
+        htmlProductToAppend += `<div class="carousel-item">
+        <img src="`+category.imgSrc+`" alt="`+category.description+`"> </div>`
+
+        document.getElementById("prod-list-container").innerHTML = (htmlProductToAppend);
+    }
+}
+/*function muestraProductosRelacionados(relacionados){
+
+    let htmlProductsToAppend = "";
+
+    for(let i = 0; i < relacionados.length; i++){
+        let images = relacionados[i];
+
+        htmlProductsToAppend += `
+        <div class="col-lg-3 col-md-4 col-6">
+            <div class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="` + relacionados.imgSrc + `" alt="">
+            </div>
+        </div>
+        `
+
+        document.getElementById("prod-list-container").innerHTML = htmlProductsToAppend;
+    }
+}/*
+
+
+
+
 /* function cargar(){
     mostrar(comentarios);
     elvalor(0);
@@ -122,3 +207,4 @@ filas +=`<tr><td>`+nombre+`</td></tr>`;
     tabla.innerHTML = filas
     console.log(lista);
 } */
+

@@ -25,9 +25,15 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" href="login.html" onclick="desconectar();">Salir</a>
-
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="hola" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="login.html" onclick="desconectar();">Salir</a>
+        </div>
+      </div>
     </div>
   </nav>
   <div class="container p-5">
@@ -63,17 +69,54 @@
             <p id="soldCount"></p>
           </dd>
   
-          <dt>Imágenes ilustrativas</dt>
+          <dt>Imágenes ilustrativas</dt> <br>
           <dd>
             <div class="row text-center text-lg-left pt-2" id="images">
             </div>
           </dd>
-          <!-- <dt>Productos relacionados</dt>
+          <dt>Productos relacionados</dt> <br>
           <dd>
-            <div class="row text-center text-lg-left pt-2" id="relatedProducts">
+
+        <hr>
+            <div class="row">
+              <div class="col-3">
+                <img src="img/prod2.jpg" alt="" class="img-thumbnail">
+              </div>
+              <div class="col">
+                  <div class="d-flex w-100 justify-content-between">
+                      <h4 class="mb-1">Fiat Way</h4>
+                      <small class="text-muted">52 articulos</small>
+                  </div>
+                  <p class="mb-3">La versión de Fiat que brinda confort y a un precio accesible.</p>
+                  <div> <h5 style="font-weight: bold">14500 USD </h5>
+                  </div>
+              </div>
+          </div>
+      <br>
+       <div class="row">
+        <div class="col-3">
+          <img src="img/prod4.jpg" alt="" class="img-thumbnail">
+        </div>
+        <div class="col">
+            <div class="d-flex w-100 justify-content-between">
+                <h4 class="mb-1">Peugeot 208</h4>
+                <small class="text-muted">17 articulos</small>
             </div>
-          </dd> -->
+            <p class="mb-3">El modelo de auto que se sigue renovando y manteniendo su prestigio en comodidad.</p>
+            <div> <h5 style="font-weight: bold">15200 USD </h5>
+            </div>
+        </div>
+    </div>
+          </dd>
         </dl>
+      </div>
+      <!--<div class="row">
+        <div class="col-3">
+          <img src="" alt="">
+        </div>
+      </div>-->
+      <div id="carouselExampleSlidesOnly" class="carousel slide" date-ride="carousel" data-interval="50">
+        <div class="carousel-item" id="cat-list-container"></div>
       </div>
       <hr>
       <!-- <div class="container">
