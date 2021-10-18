@@ -52,12 +52,159 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container">
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Articulos a comprar</h4>
+          <div class="row justify-content-md-center">
+            <div>
+        <div class="text-rigth p-4"> 
+          <table class="table table-white">
+            <th>Nombre</th>
+            <th>Producto</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+      
+            <tbody id="carrito"></tbody>
+          </table>
+          </div>
+          </div>
+          </div>
+          <hr class="mb-4">
+              <h4 class="mb-3">Tipo de envio</h4>
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                  <label class="custom-control-label" for="goldradio">Premium de 2 a 5 dias (15%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="premiumradio">Express  de 5 a 8 dias (7%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="standardradio">Standar de 12 a 15 dias (5%)</label>
+                </div>
+                <div class="row">
+                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+                </div>
+              </div>
+              <hr class="mb-4">
+
+          <div class="row">
+            <div>
+              <h4>Dirección de envio</h4> <br>
+              Calle: <br><input type="text" name="calle" size="40"><br><br>
+
+              Numero: <br><input type="text" name="numero" size="20"><br><br>
+        
+              Esquina: <br><input type="text" name="esquina" size="40"><br><br>
+        
+             
+            </div>
+          </div>
+          <hr class="mb-4">
+          <h4 class="mb-3">Costos</h4>
+          <ul class="list-group mb-3">
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Subtotal</h6>
+                  <small class="text-muted">Costo unitario del producto por cantidad</small>
+                </div>
+                <span class="text-muted" id="productCostText">-</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between lh-condensed">
+                <div>
+                  <h6 class="my-0">Costo de envio</h6>
+                  <small class="text-muted">Según el tipo de envio</small>
+                </div>
+                <span class="text-muted" id="comissionText">-</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Total ($)</span>
+                <strong id="totalCostText">-</strong>
+              </li>
+            </ul>
+          <div class="text-center p-4">
+          <button class="btn btn-primary btn-lg" type="submit" onclick="comprarconexito()">Finalizar compra</button>
+      
+          <a href="products.html" class="btn btn-link btn-block">Mas productos aquí</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="text-muted">
+    <div class="container">
+        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+
+<!--<h3>Forma de pago</h3>
+  </div>
+  <div id="cost" class="carousel slide" >
+    <div id="carritos"></div>
+  </div>
+  <div class="col-12 cart-totals">
+    <table class="table table-striped">
+      <tr class="totals">
+        <td colspan="1" class="text-left">Envio</td>
+        <td colspan="1" class="text-right">Precio $</td>
+      </tr>
+      <tr class="totals key">
+        <td colspan="1" class="text-left"><strong>Total</strong></td>
+
+        <td colspan="1" class="text-right"><strong>$200.000</strong></td>
+
+      </tr>
+    </table>
+    <div class="text-center cart-actions">
+      <table class="text-right">
+        <tr> 
+          <td><a href="" class="btn btn-primary btn-block" >Finalizar compra</a></td>
+        </tr>
+        <tr>
+       <td><a href="products.html" class="btn btn-link btn-block">Mas productos aquí</a></td>
+        </tr>
+    </table>
+    </div>
+  </div> -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Condiciones del envio</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+              <div class="row">
+                  <h5 class="text-warning">Premium de 2 a 5 dias (15%)</h5>
+                  <p class="muted text-justify">Tu envio llegara mas rapido que los otros tipo de envios.</p>
+              </div>
+              <hr>
+              <div class="row">
+                  <h5 class="text-primary">Express  de 5 a 8 dias (7%)</h5>
+                  <p class="muted text-justify">Tu envio llegara mas rapido, mas que el envio Standar, es el mas recomendado y mas comprado por los clientes.</p>
+              </div>
+              <hr>
+              <div class="row">
+                  <h5 class="text-secondary">Standar de 12 a 15 dias (5%)</h5>
+                  <p class="muted text-justify">Tu envio llegara en ese plazo de dias, mucho mas inferior que el resto de tipos de envios.</p>
+              </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
   </div>
   <div id="spinner-wrapper">

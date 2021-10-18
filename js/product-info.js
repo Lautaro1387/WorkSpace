@@ -75,7 +75,7 @@ function mostrarcomentarios(comentarios){
 
     let htmlCommentToAppend = "";
 
-    for(let i=0;i <comentarios.length; i++){
+    for(let i=0;i < comentarios.length; i++){
        let comentario = comentarios[i];
 
 
@@ -160,12 +160,12 @@ function muestraProductosRelacionados(algo){
 
         document.getElementById("prod-list-container").innerHTML = htmlProductsToAppend;
     }
-}/*
+}
 
 
 
 
-/* function cargar(){
+function cargar(){
     mostrar(comentarios);
     elvalor(0);
     document.getElementById("radio1").checked=false;
@@ -205,6 +205,5 @@ function mostrar(lista){
 filas +=`<tr><td>`+nombre+`</td></tr>`;
     }
     tabla.innerHTML = filas
-    console.log(lista);
-} */
+}*/
 
