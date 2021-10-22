@@ -7,10 +7,21 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>eMercado - Todo lo que busques está aquí</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>eMercado - Todo lo que busques está aquí</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
 
   <style>
     .bd-placeholder-img {
@@ -33,7 +44,7 @@
   <link href="css/dropzone.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="text-center">
   <nav class="site-header sticky-top py-1 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
@@ -51,26 +62,133 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
+
+
+
+  <div class="container">
+  <div class="text-center p-4">
+    <h2>Perfil</h2>
+  </div>
+ 
+  <div class="card">
+    <div class="card-body">
+    <form id="login" onsubmit="process(event)">
+      <div class="container">
+        <label>Nombre completo</label>
+        <div>
+            <input type="text" placeholder="Juan Carlos"
+            class="form-control">
+        </div>
+    </div>
+    <div class="container">
+      <label>Edad</label>
+      <div>
+          <input type="number" placeholder="Ingresa tu edad"
+          class="form-control">
+      </div>
+  </div>
+    <div class="container">
+        <label for="example-email" class="col-md-12">Correo electronico</label>
+        <div>
+            <input type="email" 
+            class="form-control" name="example-email" placeholder="perfil123@gmail.com"
+                id="example-email">
+        </div>
+    </div>
+    <div class="container">
+      <label>Telefono</label>
+      <div>
+      <input id="phone" type="tel" name="phone"/>
+      <!--<input type="submit" class="btn" value="Verify"/>-->
+    </div>
+  </div>
+  <div class="container">
+  <button class= "btn btn-primary" id="submit" onclick="verificar(usuario.value, contraseña.value);">Guardar datos</button> 
+</div>
+    </form>
+   </div>
+  </div>
+</div>
+
+  <!--<div class="row page-titles">
+    <div class="col-md-5 align-self-center">
+        <h3 class="text-themecolor">Perfil</h3>
+        <div class="text-center"> <img src="../assets/images/users/5.jpg" class="img-circle"
+          width="150" />
+      <h4 class="card-title mt-2"></h4>                                  
+  </div>
+    </div>
+
+<div class="row">
+
+    <div class="container">
+      <div class="row">
+        <div class="card">
+            <div class="card-body">
+  <form>
+    <div class="form-group">
+        <label>Nombre completo</label>
+        <div>
+            <input type="text" placeholder="Nombres y apellidos"
+                class="form-control form-control-line">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="example-email" class="col-md-12">Correo electronico</label>
+        <div class="col-md-12">
+            <input type="email" 
+                class="form-control form-control-line" name="example-email"
+                id="example-email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Contraseña</label>
+        <div class="col-md-12">
+            <input type="password" value="password"
+                class="form-control form-control-line">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-12">Telefono</label>
+        <div class="col-md-12">
+          
+          <input type="text" placeholder="123 456 7890"
+                class="form-control form-control-line">
+        </div>  
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-12">Pais</label>
+        <div class="col-sm-12">
+            <select class="form-control form-control-line">
+                <option>Uruguay</option>
+                <option>Argentina</option>
+                <option>Chile</option>
+                <option>Brasil</option>
+                <option>Mexico</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div>
+            <button class="btn btn-primary">Guardar cambios</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+-->
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -85,5 +203,11 @@
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
 </body>
-
+<script>
+  const phoneInputField = document.querySelector("#phone");
+  const phoneInput = window.intlTelInput(phoneInputField, {
+    utilsScript:
+      "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+  });
+</script>
 </html>
