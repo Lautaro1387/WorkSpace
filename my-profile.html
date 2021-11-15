@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/> 
+    <link rel="stylesheet" href="css/perfil.css" />
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-
-
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-  />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 
 
   <style>
@@ -73,44 +65,24 @@
 
   <div class="container">
   <div class="text-center p-4">
-    <h2>Perfil</h2>
+    <h2 class="text-center">Perfil</h2>
   </div>
  
   <div class="card">
     <div class="card-body">
-    <form id="login" onsubmit="process(event)">
-      <div class="container">
-        <label>Nombre completo</label>
-        <div>
-            <input type="text" placeholder="Juan Carlos"
-            class="form-control">
-        </div>
-    </div>
-    <div class="container">
-      <label>Edad</label>
-      <div>
-          <input type="number" placeholder="Ingresa tu edad"
-          class="form-control">
-      </div>
-  </div>
-    <div class="container">
-        <label for="example-email" class="col-md-12">Correo electronico</label>
-        <div>
-            <input type="email" 
-            class="form-control" name="example-email" placeholder="perfil123@gmail.com"
-                id="example-email">
-        </div>
-    </div>
-    <div class="container">
-      <label>Telefono</label>
-      <div>
-      <input id="phone" type="tel" name="phone"/>
-      <!--<input type="submit" class="btn" value="Verify"/>-->
-    </div>
-  </div>
-  <div class="container">
-  <button class= "btn btn-primary" id="submit" onclick="verificar(usuario.value, contraseña.value);">Guardar datos</button> 
-</div>
+    <form>
+      <input type="file" name="fotito" onchange="previewFile()"> <br> <br>
+      <img id="fotito" src="" style="height: 200px;" ><br> <br>
+        <label>Nombre</label>
+            <input type="text" placeholder="Juan Carlos" class="form-control" id="nombreP" required> <br>   
+        <label>Edad</label>  
+            <input type="number" placeholder="Ingresa tu edad" class="form-control" id="edadP" required><br>
+        <label>Correo electronico</label>       
+            <input type="email" class="form-control"  placeholder="perfil123@gmail.com" id="emailP" required><br>  
+        <label>Telefono</label>     
+            <input id="phone" type="tel" name="phone" required> <br> <br>
+            <input  type="checkbox" name="termino" id="terminos" value="1" required><label class="term" aria-required="true"> Acepto los terminos y condiciones</label> <br> <br>
+      <button type="submit" class="btn btn-primary" id="submit" onclick="guardarDatos();">Guardar cambios </button>  
     </form>
    </div>
   </div>

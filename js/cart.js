@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 //document.addEventListener("DOMContentLoaded", function(e){
 //    });
-let productCost = 0;
+let productCost = 12600;
 let productCount = 0;
 let comissionPercentage = 0;
 let MONEY_SYMBOL = "$";
@@ -42,10 +42,10 @@ function mostrarcompras (compras){
  
  
          carrote +=`<tr> <td>
-                 <h5>${carros.name}</h5>
+                 <h5 class="text-center">${carros.name}</h5>
                  <br> </td>
                  <td class="text-center mob-hide">
-                 <img style=" width: 250px; height: 150px;" src="${carros.src}">
+                 <img style=" width: 200px; height: 140px;" src="${carros.src}" title="${carros.name}">
                  </td>
                  <td class="mob-hide">
                  <span class="order-product-price">${carros.currency}` + `${carros.unitCost}</span>
@@ -83,8 +83,25 @@ function mostrarcompras (compras){
                 mostrarcompras(compras);
             }
         });
-
         
+        document.getElementById("tc").addEventListener("change",function(){
+
+           
+                  document.getElementById("numC").disabled = false; // habilitar
+                  document.getElementById("numC").disabled = true; // deshabilitar
+        })
+
+        document.getElementById("tb").addEventListener("change",function(){
+            document.getElementById("numT").disabled = false; // deshabilitar
+            document.getElementById("numT").disabled = true; // deshabilitar
+            document.getElementById("cod").disabled = false; // deshabilitar
+            document.getElementById("cod").disabled = true; // deshabilitar
+            document.getElementById("venc").disabled = false    ; // deshabilitar
+            document.getElementById("venc").disabled = true; // deshabilitar
+  })
+
+ 
+
         document.getElementById("goldradio").addEventListener("change", function(){
             comissionPercentage = 0.15;
             updateTotalCosts();
@@ -106,3 +123,4 @@ function comprarconexito(){
 }
 
 
+// Example starter JavaScript for disabling form submissions if there are invalid fields

@@ -62,24 +62,20 @@ function showProductsList(){
             ((maxPre == undefined) || (maxPre != undefined && parseInt(product.cost) <= maxPre))){
 
             htmlProductToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name +`</h4>
-                            <small class="text-muted">` + product.soldCount + ` artículos</small>
+                        <div class="col-md-4">
+                        <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                            <img src="` + product.imgSrc + `" alt="` + product.description + `" class="bd-placeholder-img card-img-top">
+                            <h4 class="m-4">`+ product.name +`</h4>
+                        <div class="card-body">` + product.description + `</div>
+                        <div class="text-center"> <h5 style="font-weight: bold">` + product.cost +` USD </h5>
+                        <small class="text-muted ">` + product.soldCount + ` artículos</small>
                         </div>
-                        <p class="mb-3">` + product.description + `</p>
-                        <div> <h5 style="font-weight: bold" color:red >` + product.cost +` USD </h5>
-                        </div>
+                        </a>   
                     </div>
-                </div>
-            </a>
+                
             `
         }
+
 
         document.getElementById("prod-list-container").innerHTML = htmlProductToAppend;
     }

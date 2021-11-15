@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     });
 });
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCT_URL).then(function(resultObj){
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
             productsArray = resultObj.data;
@@ -101,9 +101,9 @@ function mostrarcomentarios(comentarios){
 
 
 
-/*function armaProductosRelacionados(arrayP){
+function armaProductosRelacionados(arrayP){
  let productosRelacionados=[];
- let losProductos=infoProductos.relatedProducts
+ let losProductos= infoProductos.relatedProducts
 
  for(let i=0; i<losProductos.length;i++){
 
@@ -114,7 +114,7 @@ function mostrarcomentarios(comentarios){
 mostrarProductosRelacionados(productosRelacionados)
 }
 
-
+/*
 function mostrarProductosRelacionados(algo){
 
     let htmlContentToAppend = "";
