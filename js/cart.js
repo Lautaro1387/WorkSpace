@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 //document.addEventListener("DOMContentLoaded", function(e){
 //    });
-let productCost = 12600;
+let productCost = 0;
 let productCount = 0;
 let comissionPercentage = 0;
 let MONEY_SYMBOL = "$";
